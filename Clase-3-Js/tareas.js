@@ -122,12 +122,14 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
-  if(numero % 3 == 0 ){
+  if(numero % 3 === 0 ){
     return "fizz";
-  }else if(numero % 5 == 0){
+  }else if(numero % 5 === 0){
     return "buzz";
-  }else if(numero % 15 == 0){
+  }else if(numero % 15 === 0){
     return "fizzbuzz";
+  }else{
+    return numero
   }
 }
 
@@ -139,17 +141,45 @@ function operadoresLogicos(num1, num2, num3) {
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
   //Tu código:
+  if(num1 > num2 && num1 > num3 && num1 > 0 ){
+    return "Número 1 es mayor y positivo"
+  }
+  if(0 > num1 || 0 > num2 || 0 > num3){
+    return "Hay negativos"
+  }
+  if(num3 > num1 || num3 > num2){
+    return num3 + 1
+  }
+  if(num1 === 0 || num2 === 0 || num3 === 0){
+    return "Error"
+  }else{
+    return false;
+  }
 }
 
 function esVerdadero(valor) {
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí:
+  if(typeof(valor) === "boolean"){
+    if(valor === true){
+      return "Soy verdadero"
+    }
+    else if(valor === false){
+      return "Soy falso";
+    }
+  }
 }
 
 function tieneTresDigitos(numero) {
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí:
+
+  if(String(numero).length === 3 ){
+    return true;
+  }else{
+    return false
+  }
 }
 
 // ---------- Puntos extra ----------
@@ -161,6 +191,14 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
   // Tu código:
+  for (let i = 0; i <= numero; i++) {
+    if(numero % i == 0){
+      return true
+    }else{
+      return false;
+    }
+    
+  }
 }
 
 function doWhile(numero) {
@@ -168,6 +206,14 @@ function doWhile(numero) {
   //Retornar el valor final.
   //Usar el bucle do ... while.
   //Tu código:
+  // var contador = 0 ;
+  // do {
+  //   numero = numero + 5;
+  // } while (contador < 8){
+  //   if (contador === 7) {
+  //     return numero
+  //   }
+  // };
 }
 
 // No modificar nada debajo de esta línea, sino no correrán los test.
